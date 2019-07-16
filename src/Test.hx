@@ -7,6 +7,7 @@ class Test extends hxd.App {
 	// Engine ready
 	override function init() {
 		hxd.Res.initEmbed();
+		h3d.Engine.getCurrent().backgroundColor = 0x21263f;
 
 		var map = new h2dTiled.TiledMap( hxd.Res.map );
 
