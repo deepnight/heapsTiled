@@ -1,0 +1,12 @@
+{
+  "name": "h2dTiled",
+  "url" : "https://github.com/deepnight/haxeRedist",
+  "license": "Apache",
+  "tags": ["Heaps","Hashlink","Tiled","import"],
+  "description": "Import Tiled generated maps to Heaps based projects",
+  "version": "0.0.1",
+  "classPath": "src/",
+  "releasenote": "Initial",
+  "contributors": ["sbenard"],
+  "dependencies": {}
+}

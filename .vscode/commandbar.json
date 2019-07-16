@@ -1,0 +1,32 @@
+{
+    "skipTerminateQuickPick": true,
+    "skipSwitchToOutput": false,
+    "skipErrorMessage": true,
+    "commands": [
+      {
+        "text": "🍊 Build test",
+        "color": "orange",
+        "commandType":"palette",
+        "command": "workbench.action.tasks.runTask|HL release",
+        "alignment": "right",
+        "skipTerminateQuickPick": false,
+        "priority": -10
+      },
+      {
+        "text": "Run test",
+        "color": "orange",
+        "command": "hl bin/client.hl",
+        "alignment": "right",
+        "skipTerminateQuickPick": false,
+        "priority": -11
+      },
+        {
+        "text": "➠ Submit to haxelib",
+        "color": "yellow",
+        "command": "start haxelib submit .",
+        "alignment": "right",
+        "skipTerminateQuickPick": false,
+        "priority": -99
+      }
+    ]
+  }
