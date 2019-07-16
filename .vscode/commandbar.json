@@ -7,7 +7,7 @@
         "text": "🍊 Build test",
         "color": "orange",
         "commandType":"palette",
-        "command": "workbench.action.tasks.runTask|HL release",
+        "command": "workbench.action.tasks.runTask|HL",
         "alignment": "right",
         "skipTerminateQuickPick": false,
         "priority": -10
@@ -15,7 +15,7 @@
       {
         "text": "Run test",
         "color": "orange",
-        "command": "hl bin/client.hl",
+        "command": "hl bin/test.hl",
         "alignment": "right",
         "skipTerminateQuickPick": false,
         "priority": -11
