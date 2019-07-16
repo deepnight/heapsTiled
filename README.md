@@ -8,9 +8,14 @@ See Test.hx
 
 # Folder structure
 
-.
-+-- Test.hx
-+-- h2dTiled
-|   +-- TiledMap.hx
-|   +-- com
-|   |   +-- TTileSet.hx
+```bash
+│   Test.hx
+│
+└───h2dTiled
+    │   TiledMap.hx
+    │
+    └───com
+            TLayer.hx
+            TObject.hx
+            TTileset.hx
+```
