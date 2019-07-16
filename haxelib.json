@@ -1,6 +1,6 @@
 {
   "name": "h2dTiled",
-  "url" : "https://github.com/deepnight/haxeRedist",
+  "url" : "https://github.com/deepnight/h2dTiled",
   "license": "Apache",
   "tags": ["Heaps","Hashlink","Tiled","import"],
   "description": "Import Tiled generated maps to Heaps based projects",
