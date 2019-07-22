@@ -10,6 +10,10 @@ class TObject {
 	public var hei = 0;
 	public var cwid(get,never) : Int; inline function get_cwid() return Std.int(wid/tmap.tileWid);
 	public var chei(get,never) : Int; inline function get_chei() return Std.int(hei/tmap.tileHei);
+	public var ellipse = false;
+
+	public var centerX(get,never) : Int; inline function get_centerX() return Std.int(x+wid*0.5);
+	public var centerY(get,never) : Int; inline function get_centerY() return Std.int(y+hei*0.5);
 
 	public var cx(get,never) : Int; inline function get_cx() return Std.int(x/tmap.tileWid);
 	public var cy(get,never) : Int; inline function get_cy() return Std.int(y/tmap.tileHei);
@@ -26,10 +30,10 @@ class TObject {
 	}
 
 	public function toString() {
-		return "TODO";
-		// return 'Obj:$name($type)@$cx,$cy' + (wid>0 ? ' / $wid x $hei' : "");
+		return 'Obj:$name($type)@$cx,$cy' + (wid>0 ? ' / $wid x $hei' : "");
 	}
 
-	public inline function isRect() return wid>0 && hei>0;
 	public inline function isPoint() return wid<=0 && hei<=0;
+	public inline function isRect() return wid>0 && hei>0 && !ellipse;
+	public inline function isEllipse() return wid>0 && hei>0 && ellipse;
 }

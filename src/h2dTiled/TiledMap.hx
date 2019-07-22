@@ -67,6 +67,16 @@ class TiledMap {
 				if( o.has.height ) e.hei = Std.parseInt( o.att.height );
 				if( o.has.name ) e.name = o.att.name;
 				if( o.has.type ) e.type = o.att.type;
+				if( o.hasNode.ellipse ) {
+					e.ellipse = true;
+					if( e.wid==0 ) {
+						// Fix 0-sized ellipses
+						e.x-=tileWid>>1;
+						e.y-=tileHei>>1;
+						e.wid = tileWid;
+						e.hei = tileHei;
+					}
+				}
 				objects.get(ol.att.name).push(e);
 			}
 		}
