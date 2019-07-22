@@ -29,4 +29,7 @@ class TObject {
 		return "TODO";
 		// return 'Obj:$name($type)@$cx,$cy' + (wid>0 ? ' / $wid x $hei' : "");
 	}
+
+	public inline function isRect() return wid>0 && hei>0;
+	public inline function isPoint() return wid<=0 && hei<=0;
 }

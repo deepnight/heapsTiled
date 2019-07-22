@@ -85,6 +85,28 @@ class TiledMap {
 	}
 
 
+	public function getObjects(layer:String, ?type:String) : Array<TObject> {
+		if( !objects.exists(layer) )
+			return [];
+
+		return type==null ? objects.get(layer) : objects.get(layer).filter( function(o) return o.type==type );
+	}
+
+	public function getPointObjects(layer:String, ?type:String) : Array<TObject> {
+		if( !objects.exists(layer) )
+			return [];
+
+		return objects.get(layer).filter( function(o) return o.isPoint() && ( type==null || o.type==type ) );
+	}
+
+	public function getRectObjects(layer:String, ?type:String) : Array<TObject> {
+		if( !objects.exists(layer) )
+			return [];
+
+		return objects.get(layer).filter( function(o) return o.isRect() && ( type==null || o.type==type ) );
+	}
+
+
 	public function renderLayerBitmap(l:TLayer, ?p) : h2d.Object {
 		var wrapper = new h2d.Object(p);
 		var cx = 0;
