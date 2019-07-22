@@ -1,11 +1,8 @@
 -cp src
--lib castle
 -lib heaps
--lib hxbit
 -lib h2dTiled
+-lib hlsdl
 -main Test
--dce full
 
 -D windowSize=800x600
--lib hlsdl
 -hl bin/test.hl
