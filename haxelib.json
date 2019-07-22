@@ -4,9 +4,9 @@
   "license": "Apache",
   "tags": ["Heaps","Hashlink","Tiled","import"],
   "description": "Import Tiled generated maps to Heaps based projects",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "classPath": "src/",
-  "releasenote": "Better rect objects support",
+  "releasenote": "Added support for ellipses",
   "contributors": ["sbenard"],
   "dependencies": {}
 }
