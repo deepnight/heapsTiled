@@ -36,6 +36,14 @@ class Test extends hxd.App {
 				g.beginFill(ec, 0.3);
 				g.drawEllipse(o.centerX, o.centerY, o.wid*0.5, o.hei*0.5);
 			}
+			else if( o.isTile() ) {
+				var b = new h2d.Bitmap( o.getTile(), g );
+				b.x = o.x;
+				b.y = o.y;
+				g.lineStyle(1, rc, 1);
+				g.beginFill(rc, 0.3);
+				g.drawRect(o.x, o.y, o.wid, o.hei);
+			}
 			else {
 				g.lineStyle(1, pc, 1);
 				g.beginFill(pc, 0.3);

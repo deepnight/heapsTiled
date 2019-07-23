@@ -2,6 +2,7 @@ package h2dTiled;
 
 import h2dTiled.com.*;
 
+@:allow(h2dTiled.com.TObject)
 @:allow(h2dTiled.com.TLayer)
 class TiledMap {
 	public var wid : Int;
@@ -67,7 +68,11 @@ class TiledMap {
 				if( o.has.height ) e.hei = Std.parseInt( o.att.height );
 				if( o.has.name ) e.name = o.att.name;
 				if( o.has.type ) e.type = o.att.type;
-				if( o.hasNode.ellipse ) {
+				if( o.has.gid ) {
+					e.tileId = Std.parseInt( o.att.gid );
+					e.y-=e.hei; // fix stupid bottom-left based coordinate
+				}
+				else if( o.hasNode.ellipse ) {
 					e.ellipse = true;
 					if( e.wid==0 ) {
 						// Fix 0-sized ellipses
@@ -166,7 +171,7 @@ class TiledMap {
 		return out;
 	}
 
-	function getSet(tileId:Int) : Null<TTileset> {
+	function getTileSet(tileId:Int) : Null<TTileset> {
 		for(set in tilesets)
 			if( tileId>=set.baseId && tileId<=set.lastId )
 				return set;
@@ -174,7 +179,7 @@ class TiledMap {
 	}
 
 	inline function getTile(tileId:Int) : Null<h2d.Tile> {
-		var s = getSet(tileId);
+		var s = getTileSet(tileId);
 		return s!=null ? s.getTile(tileId) : null;
 	}
 

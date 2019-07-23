@@ -21,6 +21,8 @@ class TObject {
 	public var xr(get,never) : Float; inline function get_xr() return (x-cx*tmap.tileWid) / tmap.tileWid;
 	public var yr(get,never) : Float; inline function get_yr() return (y-cy*tmap.tileHei) / tmap.tileHei;
 
+	public var tileId : Null<Int>;
+
 	public function new(m:TiledMap, x:Int, y:Int, ?w=0, ?h=0) {
 		tmap = m;
 		this.x = x;
@@ -33,7 +35,25 @@ class TObject {
 		return 'Obj:$name($type)@$cx,$cy' + (wid>0 ? ' / $wid x $hei' : "");
 	}
 
-	public inline function isPoint() return wid<=0 && hei<=0;
-	public inline function isRect() return wid>0 && hei>0 && !ellipse;
-	public inline function isEllipse() return wid>0 && hei>0 && ellipse;
+	public inline function isPoint() return !isTile() && wid<=0 && hei<=0;
+	public inline function isRect() return !isTile() && wid>0 && hei>0 && !ellipse;
+	public inline function isEllipse() return !isTile() && wid>0 && hei>0 && ellipse;
+	public inline function isTile() return tileId!=null;
+
+	public function getLocalTileId() {
+		var l = tmap.getTileSet(tileId);
+		if( l!=null )
+			return tileId-l.baseId;
+		else
+			return tileId;
+	}
+
+	public function getTile() : Null<h2d.Tile> {
+		if( !isTile() )
+			return null;
+		var l = tmap.getTileSet(tileId);
+		if( l==null )
+			return null;
+		return l.getTile(tileId);
+	}
 }

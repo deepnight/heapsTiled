@@ -67,7 +67,7 @@ class TLayer {
 		if( !hasTile(cx,cy) )
 			return -1;
 		var id = content.get(cx+cy*wid);
-		id -= tmap.getSet(id).baseId;
+		id -= tmap.getTileSet(id).baseId;
 		return id;
 	}
 
