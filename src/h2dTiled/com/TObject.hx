@@ -40,6 +40,10 @@ class TObject {
 	public inline function isEllipse() return !isTile() && wid>0 && hei>0 && ellipse;
 	public inline function isTile() return tileId!=null;
 
+	public inline function rectContains(xx:Float, yy:Float) {
+		return isRect() && xx>=x && xx<x+wid && yy>=y && yy<y+hei;
+	}
+
 	public function getLocalTileId() {
 		var l = tmap.getTileSet(tileId);
 		if( l!=null )
