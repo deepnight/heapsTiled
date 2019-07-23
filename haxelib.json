@@ -4,9 +4,9 @@
   "license": "Apache",
   "tags": ["Heaps","Hashlink","Tiled","import"],
   "description": "Import Tiled generated maps to Heaps based projects",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "classPath": "src/",
-  "releasenote": "Added support for tile objects",
+  "releasenote": "Tile objects are now center based",
   "contributors": ["sbenard"],
   "dependencies": {}
 }

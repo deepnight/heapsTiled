@@ -70,7 +70,8 @@ class TiledMap {
 				if( o.has.type ) e.type = o.att.type;
 				if( o.has.gid ) {
 					e.tileId = Std.parseInt( o.att.gid );
-					e.y-=e.hei; // fix stupid bottom-left based coordinate
+					e.x+=Std.int(e.wid*0.5); // fix stupid bottom-left based coordinate
+					e.y-=Std.int(e.hei*0.5); // fix stupid bottom-left based coordinate
 				}
 				else if( o.hasNode.ellipse ) {
 					e.ellipse = true;
