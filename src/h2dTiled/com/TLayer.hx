@@ -5,7 +5,7 @@ class TLayer {
 	public var name : String = "";
 	public var wid : Int;
 	public var hei : Int;
-	public var props : Map<String,String> = new Map();
+	var props : Map<String,String> = new Map();
 	var tmap : TiledMap;
 
 	var ids : Array<Int> = [];

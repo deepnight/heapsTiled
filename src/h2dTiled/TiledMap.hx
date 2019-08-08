@@ -83,6 +83,11 @@ class TiledMap {
 						e.hei = tileHei;
 					}
 				}
+
+				// Properties
+				if( o.hasNode.properties )
+					for(p in o.node.properties.nodes.property)
+						e.setProp(p.att.name, p.att.value);
 				objects.get(ol.att.name).push(e);
 			}
 		}
