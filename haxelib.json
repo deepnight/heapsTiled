@@ -4,9 +4,9 @@
   "license": "Apache",
   "tags": ["Heaps","Hashlink","Tiled","import"],
   "description": "Import Tiled generated maps to Heaps based projects",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "classPath": "src/",
-  "releasenote": "Added support for custom props to TObject",
+  "releasenote": "Fixed tile object coord (now top-left based)",
   "contributors": ["sbenard"],
   "dependencies": {}
 }
