@@ -35,7 +35,7 @@ class TiledMap {
 
 		// Parse layers
 		for(l in xml.nodes.layer) {
-			var layer = new TLayer( this, Std.parseInt(l.att.id), Std.parseInt(l.att.width), Std.parseInt(l.att.height) );
+			var layer = new TLayer( this, Std.string(l.att.name), Std.parseInt(l.att.id), Std.parseInt(l.att.width), Std.parseInt(l.att.height) );
 			layers.push(layer);
 
 			// Properties

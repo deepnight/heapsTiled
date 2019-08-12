@@ -13,8 +13,9 @@ class TLayer {
 	var yFlip : Map<Int,Bool> = new Map();
 	var content : Map<Int,Int> = new Map();
 
-	public function new(tmap:TiledMap, id:Int, w, h) {
+	public function new(tmap:TiledMap, name:String, id:Int, w, h) {
 		this.tmap = tmap;
+		this.name = name;
 		this.id = id;
 		wid = w;
 		hei = h;
