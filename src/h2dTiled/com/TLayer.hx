@@ -88,6 +88,11 @@ class TLayer {
 		return v==null ? 0 : Std.parseInt(v);
 	}
 
+	public function getPropFloat(name) : Float {
+		var v = getPropStr(name);
+		return v==null ? 0 : Std.parseFloat(v);
+	}
+
 	public function getPropBool(name) : Bool {
 		var v = getPropStr(name);
 		return v=="true";

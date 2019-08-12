@@ -93,6 +93,13 @@ class TiledMap {
 		}
 	}
 
+	public function getLayer(name:String) : Null<TLayer> {
+		for (l in layers)
+			if (l.name == name)
+				return l;
+		
+		return null;
+	}
 
 	public function getObject(layer:String, name:String) : Null<TObject> {
 		if( !objects.exists(layer) )
