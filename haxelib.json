@@ -4,9 +4,9 @@
   "license": "Apache",
   "tags": ["Heaps","Hashlink","Tiled","import"],
   "description": "Import Tiled generated maps to Heaps based projects",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "classPath": "src/",
-  "releasenote": "Fixed tile object coord (now top-left based)",
+  "releasenote": "Merged Tipyx changes",
   "contributors": ["sbenard"],
   "dependencies": {}
 }
