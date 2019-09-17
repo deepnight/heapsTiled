@@ -25,7 +25,7 @@ class TiledMap {
 		hei = Std.parseInt( xml.att.height );
 		tileWid = Std.parseInt( xml.att.tilewidth );
 		tileHei = Std.parseInt( xml.att.tileheight );
-		bgColor = xml.has.backgroundcolor ? mt.deepnight.Color.hexToInt(xml.att.backgroundcolor) : null;
+		bgColor = xml.has.backgroundcolor ? dn.Color.hexToInt(xml.att.backgroundcolor) : null;
 
 		// Parse tilesets
 		for(t in xml.nodes.tileset) {
@@ -96,7 +96,7 @@ class TiledMap {
 		for (l in layers)
 			if (l.name == name)
 				return l;
-		
+
 		return null;
 	}
 
