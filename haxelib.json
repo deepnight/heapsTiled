@@ -4,9 +4,9 @@
   "license": "Apache",
   "tags": ["Heaps","Hashlink","Tiled","import"],
   "description": "Import Tiled generated maps to Heaps based projects",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "classPath": "src/",
-  "releasenote": "Merged Tipyx changes",
+  "releasenote": "Moved some libs to haxelib (INSTALL: haxelib install deepnightLibs)",
   "contributors": ["sbenard"],
   "dependencies": {}
 }
