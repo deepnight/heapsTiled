@@ -1,12 +1,11 @@
 {
-  "name": "heapsTiled",
-  "url" : "https://github.com/deepnight/heapsTiled",
+  "name": "h2dTiled",
   "license": "Apache",
   "tags": ["Heaps","Hashlink","Tiled","import"],
-  "description": "Import Tiled generated maps to Heaps based projects",
+  "description": "THIS LIB IS DEPRECATED, please use lib: heapsTiled",
   "version": "0.0.11",
   "classPath": "src/",
-  "releasenote": "Renamed lib to heapsTiled",
+  "releasenote": "THIS LIB IS DEPRECATED, please use lib: heapsTiled",
   "contributors": ["sbenard"],
   "dependencies": {}
 }

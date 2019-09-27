@@ -1,5 +1,7 @@
 package h2dTiled;
 
+#error "This lib is deprecated, please use: haxelib install heapsTiled"
+
 import h2dTiled.com.*;
 
 @:allow(h2dTiled.com.TObject)
