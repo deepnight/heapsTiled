@@ -16,6 +16,13 @@ class TiledMap {
 
 	public var bgColor : Null<UInt>;
 
+	private function htmlHexToInt(s:String) : Null<UInt> {
+		if( s.indexOf("#") == 0 )
+			return Std.parseInt("0x" + s.substring(1));
+
+		return null;
+	}
+
 	public function new(tmxRes:hxd.res.Resource) {
 		var folder = tmxRes.entry.directory;
 		var xml = new haxe.xml.Access( Xml.parse(tmxRes.entry.getText()) );
@@ -25,7 +32,7 @@ class TiledMap {
 		hei = Std.parseInt( xml.att.height );
 		tileWid = Std.parseInt( xml.att.tilewidth );
 		tileHei = Std.parseInt( xml.att.tileheight );
-		bgColor = xml.has.backgroundcolor ? dn.Color.hexToInt(xml.att.backgroundcolor) : null;
+		bgColor = xml.has.backgroundcolor ? htmlHexToInt(xml.att.backgroundcolor) : null;
 
 		// Parse tilesets
 		for(t in xml.nodes.tileset) {
