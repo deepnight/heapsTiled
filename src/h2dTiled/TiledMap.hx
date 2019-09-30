@@ -16,7 +16,14 @@ class TiledMap {
 	var props : Map<String,String> = new Map();
 
 	public var bgColor : Null<UInt>;
-	
+
+	private function htmlHexToInt(s:String) : Null<UInt> {
+		if( s.indexOf("#") == 0 )
+			return Std.parseInt("0x" + s.substring(1));
+
+		return null;
+	}
+
 	public function new(tmxRes:hxd.res.Resource) {
 		var folder = tmxRes.entry.directory;
 		var xml = new haxe.xml.Access( Xml.parse(tmxRes.entry.getText()) );
@@ -26,7 +33,7 @@ class TiledMap {
 		hei = Std.parseInt( xml.att.height );
 		tileWid = Std.parseInt( xml.att.tilewidth );
 		tileHei = Std.parseInt( xml.att.tileheight );
-		bgColor = xml.has.backgroundcolor ? mt.deepnight.Color.hexToInt(xml.att.backgroundcolor) : null;
+		bgColor = xml.has.backgroundcolor ? htmlHexToInt(xml.att.backgroundcolor) : null;
 
 		// Parse tilesets
 		for(t in xml.nodes.tileset) {
@@ -71,8 +78,7 @@ class TiledMap {
 				if( o.has.type ) e.type = o.att.type;
 				if( o.has.gid ) {
 					e.tileId = Std.parseInt( o.att.gid );
-					e.x+=Std.int(e.wid*0.5); // fix stupid bottom-left based coordinate
-					e.y-=Std.int(e.hei*0.5); // fix stupid bottom-left based coordinate
+					e.y-=e.hei; // fix stupid bottom-left based coordinate
 				}
 				else if( o.hasNode.ellipse ) {
 					e.ellipse = true;
@@ -104,7 +110,7 @@ class TiledMap {
 		for (l in layers)
 			if (l.name == name)
 				return l;
-		
+
 		return null;
 	}
 
