@@ -1,4 +1,5 @@
 -cp src
+-cp test/src
 -lib heaps
 -lib heapsTiled
 -lib hlsdl
