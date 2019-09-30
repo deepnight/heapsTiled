@@ -13,6 +13,7 @@ class TiledMap {
 	public var tilesets : Array<TTileset> = [];
 	public var layers : Array<TLayer> = [];
 	public var objects : Map<String, Array<TObject>> = new Map();
+	var props : Map<String,String> = new Map();
 
 	public var bgColor : Null<UInt>;
 
@@ -96,6 +97,12 @@ class TiledMap {
 						e.setProp(p.att.name, p.att.value);
 				objects.get(ol.att.name).push(e);
 			}
+		}
+
+		// Parse map properties
+		if (xml.hasNode.properties) {
+			for (p in xml.node.properties.nodes.property)
+				setProp(p.att.name, p.att.value);
 		}
 	}
 
@@ -213,5 +220,32 @@ class TiledMap {
 
 		var e = new TTileset(xml.att.name, tile, Std.parseInt(xml.att.tilewidth), Std.parseInt(xml.att.tileheight), baseIdx);
 		return e;
+	}
+	
+	public function setProp(name, v) {
+		props.set(name, v);
+	}
+
+	public inline function hasProp(name) {
+		return props.exists(name);
+	}
+
+	public function getPropStr(name) : Null<String> {
+		return props.get(name);
+	}
+
+	public function getPropInt(name) : Int {
+		var v = getPropStr(name);
+		return v==null ? 0 : Std.parseInt(v);
+	}
+
+	public function getPropFloat(name) : Float {
+		var v = getPropStr(name);
+		return v==null ? 0 : Std.parseFloat(v);
+	}
+
+	public function getPropBool(name) : Bool {
+		var v = getPropStr(name);
+		return v=="true";
 	}
 }
