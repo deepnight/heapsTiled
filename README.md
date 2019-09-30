@@ -19,3 +19,7 @@ See Test.hx
             TObject.hx
             TTileset.hx
 ```
+
+# Credit
+
+"Caves of Gallet" tileset by Adam Saltsman: https://adamatomic.itch.io/caves-of-gallet
