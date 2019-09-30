@@ -12,7 +12,7 @@ See Test.hx
 │   Test.hx
 │
 └───tiled
-    │   TiledMap.hx
+    │   TMap.hx
     │
     └───com
             TLayer.hx

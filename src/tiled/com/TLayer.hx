@@ -6,14 +6,14 @@ class TLayer {
 	public var wid : Int;
 	public var hei : Int;
 	var props : Map<String,String> = new Map();
-	var tmap : TiledMap;
+	var tmap : TMap;
 
 	var ids : Array<Int> = [];
 	var xFlip : Map<Int,Bool> = new Map();
 	var yFlip : Map<Int,Bool> = new Map();
 	var content : Map<Int,Int> = new Map();
 
-	public function new(tmap:TiledMap, name:String, id:Int, w, h) {
+	public function new(tmap:TMap, name:String, id:Int, w, h) {
 		this.tmap = tmap;
 		this.name = name;
 		this.id = id;

@@ -4,7 +4,7 @@ import tiled.com.*;
 
 @:allow(tiled.com.TObject)
 @:allow(tiled.com.TLayer)
-class TiledMap {
+class TMap {
 	public var wid : Int;
 	public var hei : Int;
 	public var tileWid : Int;
@@ -221,7 +221,7 @@ class TiledMap {
 		var e = new TTileset(xml.att.name, tile, Std.parseInt(xml.att.tilewidth), Std.parseInt(xml.att.tileheight), baseIdx);
 		return e;
 	}
-	
+
 	public function setProp(name, v) {
 		props.set(name, v);
 	}
