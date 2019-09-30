@@ -20,7 +20,7 @@
         "skipTerminateQuickPick": false,
         "priority": -11
       },
-        {
+      {
         "text": "➠ Submit to haxelib",
         "color": "yellow",
         "command": "start haxelib submit .",

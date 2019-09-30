@@ -2,6 +2,7 @@
 -lib heaps
 -lib h2dTiled
 -lib hlsdl
+-lib deepnightLibs
 -main Test
 
 -D windowSize=800x600
