@@ -1,6 +1,6 @@
 -cp src
 -lib heaps
--lib h2dTiled
+-lib heapsTiled
 -lib hlsdl
 -lib deepnightLibs
 -main Test

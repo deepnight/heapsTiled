@@ -11,7 +11,7 @@ See Test.hx
 ```bash
 │   Test.hx
 │
-└───h2dTiled
+└───tiled
     │   TiledMap.hx
     │
     └───com

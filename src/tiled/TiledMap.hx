@@ -1,9 +1,9 @@
-package h2dTiled;
+package tiled;
 
-import h2dTiled.com.*;
+import tiled.com.*;
 
-@:allow(h2dTiled.com.TObject)
-@:allow(h2dTiled.com.TLayer)
+@:allow(tiled.com.TObject)
+@:allow(tiled.com.TLayer)
 class TiledMap {
 	public var wid : Int;
 	public var hei : Int;

@@ -1,4 +1,4 @@
-package h2dTiled.com;
+package tiled.com;
 
 class TObject {
 	var tmap : TiledMap;
