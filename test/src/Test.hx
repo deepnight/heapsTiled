@@ -1,4 +1,4 @@
-import tiled.TiledMap;
+import tiled.TMap;
 import tiled.com.*;
 
 class Test extends hxd.App {
@@ -13,7 +13,7 @@ class Test extends hxd.App {
 		var wrapper = new h2d.Object(s2d);
 		wrapper.setScale(2);
 
-		var map = new tiled.TiledMap( hxd.Res.map );
+		var map = new tiled.TMap( hxd.Res.map );
 
 		h3d.Engine.getCurrent().backgroundColor = map.bgColor;
 

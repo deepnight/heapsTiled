@@ -5,12 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "HL",
+            "name": "HL run",
             "request": "launch",
             "type": "hl",
             "hxml": "test.hxml",
             "cwd": "${workspaceRoot}",
-            "preLaunchTask": "HL"
+            "preLaunchTask": "HL test"
 
         }
     ]
