@@ -209,14 +209,22 @@ class TMap {
 		return s!=null ? s.getTile(tileId) : null;
 	}
 
-	function readTileset(folder:String, file:String, baseIdx:Int) : TTileset {
-		if( folder.length>0 )
-			folder+="/";
-		var raw = try hxd.Res.load(folder+file).entry.getText()
-			catch(e:Dynamic) throw "File not found "+file;
+	function readTileset(folder:String, fileName:String, baseIdx:Int) : TTileset {
+		var folderUnstack = folder.split("/");
+		var fileUnstack = fileName.split("/");
+		while (fileUnstack[0] == "..") {
+			fileUnstack.shift();
+			folderUnstack.pop();
+		}
 
-		var xml = new haxe.xml.Access( Xml.parse(raw) ).node.tileset;
-		var tile = hxd.Res.load(folder+xml.node.image.att.source).toTile();
+		folder = folderUnstack.length > 0 ? folderUnstack.join("/") + "/" : "";
+		fileName = fileUnstack.join("/");
+
+		var file = try hxd.Res.load(folder+fileName)
+			catch(e:Dynamic) throw "File not found "+fileName;
+
+		var xml = new haxe.xml.Access( Xml.parse(file.entry.getText()) ).node.tileset;
+		var tile = hxd.Res.load(file.entry.directory + "/" +xml.node.image.att.source).toTile();
 
 		var e = new TTileset(xml.att.name, tile, Std.parseInt(xml.att.tilewidth), Std.parseInt(xml.att.tileheight), baseIdx);
 		return e;
