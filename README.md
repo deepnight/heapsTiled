@@ -11,11 +11,15 @@ See Test.hx
 ```bash
 │   Test.hx
 │
-└───h2dTiled
-    │   TiledMap.hx
+└───tiled
+    │   TMap.hx
     │
     └───com
             TLayer.hx
             TObject.hx
             TTileset.hx
 ```
+
+# Credit
+
+"Caves of Gallet" tileset by Adam Saltsman: https://adamatomic.itch.io/caves-of-gallet

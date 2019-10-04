@@ -1,7 +1,7 @@
-package h2dTiled.com;
+package tiled.com;
 
 class TObject {
-	var tmap : TiledMap;
+	var tmap : TMap;
 	public var name : Null<String>;
 	public var type : Null<String>;
 	public var x : Int;
@@ -24,7 +24,7 @@ class TObject {
 	public var tileId : Null<Int>;
 	var props : Map<String,String> = new Map();
 
-	public function new(m:TiledMap, x:Int, y:Int, ?w=0, ?h=0) {
+	public function new(m:TMap, x:Int, y:Int, ?w=0, ?h=0) {
 		tmap = m;
 		this.x = x;
 		this.y = y;

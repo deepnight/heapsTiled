@@ -1,9 +1,10 @@
 -cp src
+-cp test/src
 -lib heaps
--lib h2dTiled
 -lib hlsdl
--lib deepnightLibs
+-lib heapsTiled
 -main Test
 
--D windowSize=800x600
--hl bin/test.hl
+-D resourcesPath=test/res
+-D windowSize=1200x900
+-hl test/bin/test.hl
