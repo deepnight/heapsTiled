@@ -4,9 +4,9 @@
   "license": "Apache",
   "tags": ["Heaps","Hashlink","Tiled","import"],
   "description": "Import Tiled generated maps to Heaps based projects.",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "classPath": "src/",
-  "releasenote": "TSX and TMX files can now be in different folders",
+  "releasenote": "Haxelib dependencies",
   "contributors": ["sbenard"],
   "dependencies": {
     "heaps":"1.7.0",
