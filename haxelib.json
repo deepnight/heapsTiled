@@ -10,7 +10,6 @@
   "contributors": ["sbenard"],
   "dependencies": {
     "heaps":"1.7.0",
-    "deepnightLibs":"0.0.12",
-    "hlsdl":"1.10.0"
+    "deepnightLibs":"0.0.12"
   }
 }
