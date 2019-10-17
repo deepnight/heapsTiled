@@ -9,6 +9,8 @@
   "releasenote": "TSX and TMX files can now be in different folders",
   "contributors": ["sbenard"],
   "dependencies": {
-    "heaps":""
+    "heaps":"1.7.0",
+    "deepnightLibs":"0.0.12",
+    "hlsdl":"1.10.0"
   }
 }
