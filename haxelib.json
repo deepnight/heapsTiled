@@ -9,7 +9,7 @@
   "releasenote": "Haxelib dependencies",
   "contributors": ["sbenard"],
   "dependencies": {
-    "heaps":"1.7.0",
-    "deepnightLibs":"0.0.12"
+    "heaps":"",
+    "deepnightLibs":""
   }
 }
