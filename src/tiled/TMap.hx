@@ -55,7 +55,9 @@ class TMap {
 			var data = l.node.data;
 			switch( data.att.encoding ) {
 				case "csv" :
-					layer.setIds( data.innerHTML.split(",").map( function(id:String) : UInt {
+					// trim and remove eventual new lines.
+					var d = StringTools.trim(StringTools.replace(data.innerHTML,"\n", ""));
+					layer.setIds( d.split(",").map( function(id:String) : UInt {
 						var f = Std.parseFloat(id);
 						if( f > 2147483648. ) // dirty fix for Float>UInt casting issue when "bit #32" is set
 							return ( cast (f-2147483648.) : UInt ) | (1<<31);
